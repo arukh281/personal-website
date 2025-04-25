@@ -313,30 +313,60 @@ export default function Home(): React.ReactElement {
                     transition={{ duration: 0.8 }}
                     className="text-center"
                 >
-                    <h1 className="text-6xl font-bold mb-4">
-                        <span className="gradient-text">
-                            {`Hey, I am ${currentIndex === 0 ? "" : "a "}`}
-                        </span>
-                        <motion.span
-                            className="gradient-text"
-                            key={currentIndex}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {currentText}
-                        </motion.span>
-                        <span className="animate-pulse">|</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4">
+                        {/* Mobile layout (stacked) */}
+                        <div className="flex flex-col sm:hidden items-center justify-center">
+                            <div className="flex items-center justify-center">
+                                <span className="gradient-text">
+                                    Hey, I am
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-center mt-1">
+                                {currentIndex !== 0 && (
+                                    <span className="gradient-text mr-2">a</span>
+                                )}
+                                <motion.span
+                                    className="gradient-text"
+                                    key={currentIndex}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    {currentText}
+                                </motion.span>
+                                <span className="animate-pulse ml-1">|</span>
+                            </div>
+                        </div>
+                        
+                        {/* Desktop layout (inline) */}
+                        <div className="hidden sm:flex items-center justify-center">
+                            <span className="gradient-text">
+                                Hey, I am
+                            </span>
+                            {currentIndex !== 0 && (
+                                <span className="gradient-text ml-2">a</span>
+                            )}
+                            <motion.span
+                                className="gradient-text ml-2"
+                                key={currentIndex}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {currentText}
+                            </motion.span>
+                            <span className="animate-pulse ml-1">|</span>
+                        </div>
                     </h1>
-                    <p className="text-xl text-gray-300 mb-8">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-8">
                         Building the future with code and creativity
                     </p>
-                    <div className="flex gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             onClick={() => scrollToSection('projects')}
-                            className="px-6 py-3 bg-primary rounded-full hover-glow"
+                            className="px-4 sm:px-6 py-2 sm:py-3 bg-primary rounded-full hover-glow text-sm sm:text-base"
                         >
                             View Projects
                         </motion.button>
@@ -344,7 +374,7 @@ export default function Home(): React.ReactElement {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             onClick={() => scrollToSection('research')}
-                            className="px-6 py-3 border border-white/20 rounded-full hover-glow"
+                            className="px-4 sm:px-6 py-2 sm:py-3 border border-white/20 rounded-full hover-glow text-sm sm:text-base"
                         >
                             Research & Patents
                         </motion.button>
