@@ -8,30 +8,28 @@ import ProjectModal from './components/ProjectModal';
 
 const projects = [
     {
-        title: 'Fall Detection System for Elderly People',
-        description: 'A concept for a lightweight wearable designed to anticipate falls in elderly individuals and alert caregivers in advance.',
-        tech: ['MPU9250', 'MAX30102', 'ESP32', 'AWS/GCP', 'GSM Module (SIM800/SIM7600)', 'Firebase/DynamoDB', 'MQTT/HTTPS', 'Gaussian Process Regression', 'React.js', 'Next.js', 'TailwindCSS'],
-        color: 'from-primary to-secondary',
+        title: 'CampusQuery – University FAQ Chatbot',
+        description: 'An intelligent chatbot system to handle university-related queries using hybrid NLP techniques with confidence-based responses.',
+        tech: ['Python', 'Flask', 'SymSpell', 'TF-IDF', 'Fuzzy Matching', 'Next.js', 'AWS', 'MongoDB'],
+        color: 'from-blue-500 to-pink-600',
         details: {
-            problem: 'Elderly individuals are vulnerable to falls, and existing solutions only respond after a fall has occurred, lacking predictive capabilities.',
-            solution: 'Proposed an AI-powered wearable wristband concept capable of analyzing motion and health vitals to predict and alert before falls happen.',
+            problem: 'University students and visitors often struggle to get timely and accurate answers to their queries due to information being scattered across multiple channels or portals.',
+            solution: 'CampusQuery provides a centralized chatbot interface that delivers precise, confidence-scored answers using spelling correction, keyword matching, and fuzzy logic, ensuring high accuracy and better user experience.',
             features: [
-                'Conceptual real-time monitoring of heart rate, SpO2, and motion',
-                'Theoretical AI-based fall prediction using GPR and CNN',
-                'Emergency SOS button envisioned with GSM alerting',
-                'Cloud-integrated data dashboard with historical trends',
-                'Emphasis on secure, encrypted data flow and storage'
+                'Spelling correction using SymSpell for misspelled queries',
+                'Confidence-based response handling (high, medium, low)',
+                'TF-IDF vector matching and fuzzy logic integration',
+                'Auto-forwarding of unclear questions to faculty',
+                'Responsive Next.js frontend connected to Flask backend'
             ],
             challenges: [
-                'Designing for low-power operation in a continuous monitoring context',
-                'Ensuring connectivity via GSM in low-infrastructure areas',
-                'Filtering noisy sensor input in a resource-limited environment',
-                'Developing AI models for accurate health and motion prediction',
-                'Considering privacy, encryption, and regulatory compliance'
+                'Handling noisy user input and ambiguous questions',
+                'Maintaining performance with real-time corrections and matching',
+                'Integrating and syncing with a live database of FAQs',
+                'Providing scalable, low-latency backend responses for frontend'
             ],
-            githubUrl: '',
-            liveUrl: '',
-            certificateUrl: '/incubation certificate/incubation.pdf'
+            githubUrl: 'https://github.com/arukh281/sdc-chatbot',
+            liveUrl: 'https://sdcmuj.com/'
         }
     },
     {
@@ -84,28 +82,30 @@ const projects = [
         }
     },
     {
-        title: 'CampusQuery – University FAQ Chatbot',
-        description: 'An intelligent chatbot system to handle university-related queries using hybrid NLP techniques with confidence-based responses.',
-        tech: ['Python', 'Flask', 'SymSpell', 'TF-IDF', 'Fuzzy Matching', 'Next.js', 'AWS', 'MongoDB'],
-        color: 'from-blue-500 to-pink-600',
+        title: 'Fall Detection System for Elderly People',
+        description: 'A concept for a lightweight wearable designed to anticipate falls in elderly individuals and alert caregivers in advance.',
+        tech: ['MPU9250', 'MAX30102', 'ESP32', 'AWS/GCP', 'GSM Module (SIM800/SIM7600)', 'Firebase/DynamoDB', 'MQTT/HTTPS', 'Gaussian Process Regression', 'React.js', 'Next.js', 'TailwindCSS'],
+        color: 'from-primary to-secondary',
         details: {
-            problem: 'University students and visitors often struggle to get timely and accurate answers to their queries due to information being scattered across multiple channels or portals.',
-            solution: 'CampusQuery provides a centralized chatbot interface that delivers precise, confidence-scored answers using spelling correction, keyword matching, and fuzzy logic, ensuring high accuracy and better user experience.',
+            problem: 'Elderly individuals are vulnerable to falls, and existing solutions only respond after a fall has occurred, lacking predictive capabilities.',
+            solution: 'Proposed an AI-powered wearable wristband concept capable of analyzing motion and health vitals to predict and alert before falls happen.',
             features: [
-                'Spelling correction using SymSpell for misspelled queries',
-                'Confidence-based response handling (high, medium, low)',
-                'TF-IDF vector matching and fuzzy logic integration',
-                'Auto-forwarding of unclear questions to faculty',
-                'Responsive Next.js frontend connected to Flask backend'
+                'Conceptual real-time monitoring of heart rate, SpO2, and motion',
+                'Theoretical AI-based fall prediction using GPR and CNN',
+                'Emergency SOS button envisioned with GSM alerting',
+                'Cloud-integrated data dashboard with historical trends',
+                'Emphasis on secure, encrypted data flow and storage'
             ],
             challenges: [
-                'Handling noisy user input and ambiguous questions',
-                'Maintaining performance with real-time corrections and matching',
-                'Integrating and syncing with a live database of FAQs',
-                'Providing scalable, low-latency backend responses for frontend'
+                'Designing for low-power operation in a continuous monitoring context',
+                'Ensuring connectivity via GSM in low-infrastructure areas',
+                'Filtering noisy sensor input in a resource-limited environment',
+                'Developing AI models for accurate health and motion prediction',
+                'Considering privacy, encryption, and regulatory compliance'
             ],
-            githubUrl: 'https://github.com/arukh281/sdc-chatbot',
-            liveUrl: 'https://sdcmuj.com/'
+            githubUrl: '',
+            liveUrl: '',
+            certificateUrl: '/incubation certificate/incubation.pdf'
         }
     },
     {
@@ -354,32 +354,34 @@ export default function Home(): React.ReactElement {
 
             {/* Projects Section */}
             <section id="projects" className="section bg-dark-light relative z-10">
-                <div ref={ref} className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-12 text-center gradient-text">
+                <div ref={ref} className="container-fluid">
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center gradient-text">
                         Featured Projects 🚀
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 auto-rows-fr">
                         {projects.map((project, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                                className="card cursor-pointer"
+                                className="card cursor-pointer h-full flex flex-col"
                                 onClick={() => setSelectedProject(project)}
                             >
                                 <div className={`h-2 w-full bg-gradient-to-r ${project.color} rounded-t-xl`} />
-                                <h3 className="text-2xl font-bold mt-4">{project.title}</h3>
-                                <p className="text-gray-400 mt-2">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mt-4">
-                                    {project.tech.map((tech, i) => (
-                                        <span
-                                            key={i}
-                                            className="px-2 py-1 bg-dark rounded-full text-sm"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
+                                <div className="flex-1 p-4 sm:p-6">
+                                    <h3 className="text-xl sm:text-2xl font-bold mt-2 sm:mt-4">{project.title}</h3>
+                                    <p className="text-gray-400 mt-2 text-sm sm:text-base">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2 mt-4">
+                                        {project.tech.map((tech, i) => (
+                                            <span
+                                                key={i}
+                                                className="px-2 py-1 bg-dark rounded-full text-xs sm:text-sm"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
@@ -389,31 +391,31 @@ export default function Home(): React.ReactElement {
 
             {/* Ongoing Projects Section */}
             <section id="ongoing" className="section bg-dark relative z-10">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-12 text-center gradient-text">
+                <div className="container-fluid">
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center gradient-text">
                         Ongoing Projects 🚧
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 auto-rows-fr">
                         {ongoingProjects.map((project, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                                className="card"
+                                className="card h-full flex flex-col"
                             >
                                 <div className={`h-2 w-full bg-gradient-to-r ${project.color} rounded-t-xl`} />
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-gray-400 mb-4">{project.description}</p>
+                                <div className="flex-1 p-4 sm:p-6">
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-2">{project.title}</h3>
+                                    <p className="text-gray-400 mb-4 text-sm sm:text-base">{project.description}</p>
                                     <div className="mb-4">
-                                        <div className="flex justify-between text-sm text-gray-400 mb-1">
+                                        <div className="flex justify-between text-xs sm:text-sm text-gray-400 mb-1">
                                             <span>Progress</span>
                                             <span>{project.progress}%</span>
                                         </div>
-                                        <div className="w-full bg-gray-700 rounded-full h-2.5">
+                                        <div className="w-full bg-gray-700 rounded-full h-2">
                                             <div
-                                                className="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full"
+                                                className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
                                                 style={{ width: `${project.progress}%` }}
                                             ></div>
                                         </div>
@@ -422,13 +424,13 @@ export default function Home(): React.ReactElement {
                                         {project.tech.map((tech, i) => (
                                             <span
                                                 key={i}
-                                                className="px-2 py-1 bg-dark rounded-full text-sm"
+                                                className="px-2 py-1 bg-dark rounded-full text-xs sm:text-sm"
                                             >
                                                 {tech}
                                             </span>
                                         ))}
                                     </div>
-                                    <p className="text-sm text-gray-400">
+                                    <p className="text-xs sm:text-sm text-gray-400">
                                         Expected Completion: {project.expectedCompletion}
                                     </p>
                                 </div>
@@ -440,50 +442,50 @@ export default function Home(): React.ReactElement {
 
             {/* Research & Patents Section */}
             <section id="research" className="section bg-dark relative z-10">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-12 text-center gradient-text">
+                <div className="container-fluid">
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center gradient-text">
                         Research & Patents 📚
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 auto-rows-fr">
                         {researchAndPatents.map((item, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                                className="card"
+                                className="card h-full flex flex-col"
                             >
-                                <div className="flex items-start gap-4 p-6">
-                                    <div className={`p-3 rounded-full ${item.type === 'research' ? 'bg-secondary/20' : 'bg-accent/20'}`}>
+                                <div className="flex items-start gap-4 p-4 sm:p-6">
+                                    <div className={`p-2 sm:p-3 rounded-full ${item.type === 'research' ? 'bg-secondary/20' : 'bg-accent/20'}`}>
                                         {item.icon}
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="text-2xl font-bold">{item.title}</h3>
-                                        <p className="text-gray-400 mt-2">{item.description}</p>
+                                        <h3 className="text-xl sm:text-2xl font-bold">{item.title}</h3>
+                                        <p className="text-gray-400 mt-2 text-sm sm:text-base">{item.description}</p>
                                         <div className="mt-4 space-y-2">
                                             {item.type === 'research' ? (
                                                 <>
-                                                    <p className="text-sm text-gray-400">
+                                                    <p className="text-xs sm:text-sm text-gray-400">
                                                         <span className="text-primary">Year:</span> {item.year}
                                                     </p>
-                                                    <p className="text-sm text-gray-400">
+                                                    <p className="text-xs sm:text-sm text-gray-400">
                                                         <span className="text-primary">Status:</span> {item.status}
                                                     </p>
                                                     {item.publication && (
-                                                        <p className="text-sm text-gray-400">
+                                                        <p className="text-xs sm:text-sm text-gray-400">
                                                             <span className="text-primary">Journal:</span> {item.publication}
                                                         </p>
                                                     )}
-                                                    <p className="text-sm text-gray-400">
+                                                    <p className="text-xs sm:text-sm text-gray-400">
                                                         <span className="text-primary">Authors:</span> {item.authors?.join(', ')}
                                                     </p>
                                                 </>
                                             ) : (
                                                 <>
-                                                    <p className="text-sm text-gray-400">
+                                                    <p className="text-xs sm:text-sm text-gray-400">
                                                         <span className="text-primary">Status:</span> {item.status}
                                                     </p>
-                                                    <p className="text-sm text-gray-400">
+                                                    <p className="text-xs sm:text-sm text-gray-400">
                                                         <span className="text-primary">Year:</span> {item.year}
                                                     </p>
                                                 </>
@@ -494,7 +496,7 @@ export default function Home(): React.ReactElement {
                                                 href={item.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors"
+                                                className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors text-sm sm:text-base"
                                             >
                                                 {item.type === 'research' ? 'Read Paper' : 'View Patent'}
                                                 <FiExternalLink />

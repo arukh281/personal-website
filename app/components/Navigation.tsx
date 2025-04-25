@@ -43,16 +43,17 @@ export default function Navigation(): React.ReactElement {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 p-4">
-            <div className="max-w-7xl mx-auto flex justify-center gap-8">
+        <nav className="fixed top-0 left-0 right-0 z-50 p-2 sm:p-4">
+            <div className="max-w-[90rem] mx-auto flex justify-center gap-2 sm:gap-4 md:gap-8">
                 {sections.map((section) => (
                     <motion.button
                         key={section.id}
                         onClick={() => scrollToSection(section.id)}
-                        className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${activeSection === section.id
-                            ? 'bg-primary text-white'
-                            : 'text-gray-400 hover:text-white'
-                            }`}
+                        className={`text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 ${
+                            activeSection === section.id
+                                ? 'bg-primary text-white'
+                                : 'text-gray-400 hover:text-white'
+                        }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

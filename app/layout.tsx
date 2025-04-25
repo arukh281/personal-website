@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
             <body className="bg-dark text-white overflow-x-hidden">
-                <main className="snap-y snap-mandatory h-screen overflow-y-auto">
+                <main className="snap-y snap-mandatory h-[100dvh] overflow-y-auto">
                     {children}
                 </main>
             </body>
