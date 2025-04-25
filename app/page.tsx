@@ -317,7 +317,7 @@ export default function Home(): React.ReactElement {
                         {/* Mobile layout (stacked) */}
                         <div className="flex flex-col sm:hidden items-center justify-center">
                             <div className="flex items-center justify-center">
-                                <span className="gradient-text">
+                                <span className="gradient-text px-2 py-1">
                                     Hey, I am
                                 </span>
                             </div>
@@ -326,7 +326,7 @@ export default function Home(): React.ReactElement {
                                     <span className="gradient-text mr-2">a</span>
                                 )}
                                 <motion.span
-                                    className="gradient-text"
+                                    className="gradient-text px-2 py-1"
                                     key={currentIndex}
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
@@ -340,14 +340,14 @@ export default function Home(): React.ReactElement {
                         
                         {/* Desktop layout (inline) */}
                         <div className="hidden sm:flex items-center justify-center">
-                            <span className="gradient-text">
+                            <span className="gradient-text px-2 py-1">
                                 Hey, I am
                             </span>
                             {currentIndex !== 0 && (
                                 <span className="gradient-text ml-2">a</span>
                             )}
                             <motion.span
-                                className="gradient-text ml-2"
+                                className="gradient-text ml-2 px-2 py-1"
                                 key={currentIndex}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
