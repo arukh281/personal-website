@@ -264,9 +264,10 @@ export default function Home(): React.ReactElement {
     ];
 
     useEffect(() => {
-        const typingSpeed = 75;
-        const deletingSpeed = 25;
-        const pauseDuration = 1200;
+        const typingSpeed = 25;
+        const deletingSpeed = 10;
+        const pauseDuration = 800;
+        const aradhyaPauseDuration = 2000; // Special pause duration for "Aradhya"
 
         const timeout = setTimeout(() => {
             if (!isDeleting) {
@@ -275,7 +276,7 @@ export default function Home(): React.ReactElement {
                     // Finished typing current role, pause then start deleting
                     setTimeout(() => {
                         setIsDeleting(true);
-                    }, pauseDuration);
+                    }, roles[currentIndex] === "Aradhya" ? aradhyaPauseDuration : pauseDuration);
                 } else {
                     // Continue typing
                     setCurrentText(roles[currentIndex].slice(0, currentText.length + 1));
@@ -323,7 +324,7 @@ export default function Home(): React.ReactElement {
                             </div>
                             <div className="flex items-center justify-center mt-1">
                                 {currentIndex !== 0 && (
-                                    <span className="gradient-text mr-2">a</span>
+                                    <span className="gradient-text mr-1">a</span>
                                 )}
                                 <motion.span
                                     className="gradient-text px-2 py-1"
