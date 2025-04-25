@@ -527,7 +527,7 @@ export default function Home(): React.ReactElement {
                     <div className="flex justify-center gap-6">
                         <motion.a
                             whileHover={{ scale: 1.2 }}
-                            href="https://github.com"
+                            href="https://github.com/arukh281"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-2xl hover-glow"
@@ -536,7 +536,7 @@ export default function Home(): React.ReactElement {
                         </motion.a>
                         <motion.a
                             whileHover={{ scale: 1.2 }}
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/aradhya-khandelwal281/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-2xl hover-glow"
@@ -545,7 +545,7 @@ export default function Home(): React.ReactElement {
                         </motion.a>
                         <motion.a
                             whileHover={{ scale: 1.2 }}
-                            href="mailto:hello@example.com"
+                            href="mailto:arukhandelwal281@gmail.com"
                             className="text-2xl hover-glow"
                         >
                             <FiMail />
