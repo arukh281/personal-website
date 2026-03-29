@@ -1,0 +1,82 @@
+.hobbies-section {
+  width: 100%;
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  padding: 80px 0 100px;
+  position: relative;
+}
+
+.hobbies-inner {
+  width: var(--cWidth);
+  margin: auto;
+  max-width: var(--cMaxWidth);
+}
+
+.hobbies-title {
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.05;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #0d9488, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0 0 20px;
+}
+
+.hobbies-title span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+
+.hobbies-lead {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto 48px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.hobbies-card {
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 22px 20px;
+  background: rgba(10, 14, 23, 0.5);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.hobbies-card:hover {
+  border-color: rgba(20, 184, 166, 0.55);
+  background: rgba(13, 148, 136, 0.08);
+}
+
+.hobbies-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #5eead4;
+}
+
+.hobbies-card p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (min-width: 1025px) {
+  .hobbies-section {
+    padding: 100px 0 120px;
+  }
+}
