@@ -135,3 +135,10 @@ body {
     font-size: 40px;
   }
 }
+
+#about,
+#life-hobbies,
+#certifications,
+#contact {
+  scroll-margin-top: 96px;
+}

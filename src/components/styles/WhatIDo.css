@@ -336,9 +336,12 @@
   .whatIDO {
     padding: 50px 0 70px;
   }
+  .what-box-in.what-life-box-in {
+    display: flex;
+  }
   .what-life-box-in {
     min-height: 0;
-    margin-left: -50px;
+    margin-left: 0;
     max-width: 100%;
   }
   .what-life-lead {

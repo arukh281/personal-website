@@ -1,5 +1,8 @@
 .section-container {
   width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 .title,
 .para {

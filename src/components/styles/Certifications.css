@@ -8,6 +8,8 @@
 .certifications-inner {
   margin: auto;
   max-width: 720px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .certifications-section h2 {

@@ -126,17 +126,6 @@ export function setCharTimeline(
         .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
         .to(character.rotation, { x: -0.04, duration: 2, delay: 1 }, 0);
     }
-  } else {
-    if (character) {
-      const tM2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".what-box-in",
-          start: "top 70%",
-          end: "bottom top",
-        },
-      });
-      tM2.to(".what-box-in", { display: "flex", duration: 0.1, delay: 0 }, 0);
-    }
   }
 }
 
@@ -144,56 +133,44 @@ export function setAllTimeline() {
   const careerTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".career-section",
-      start: "top 30%",
-      end: "100% center",
-      scrub: true,
+      start: "top 72%",
+      // Run the fill over the whole time the section passes through the viewport,
+      // instead of a short += distance (which made the line hit 100% while still on the first role).
+      end: "bottom top",
+      scrub: 1.75,
       invalidateOnRefresh: true,
     },
   });
+
   careerTimeline
     .fromTo(
       ".career-timeline",
-      { maxHeight: "10%" },
-      { maxHeight: "100%", duration: 0.5 },
+      { opacity: 0 },
+      { opacity: 1, duration: 0.2, ease: "none" },
       0
     )
-
     .fromTo(
       ".career-timeline",
-      { opacity: 0 },
-      { opacity: 1, duration: 0.1 },
+      { maxHeight: "0%" },
+      { maxHeight: "100%", duration: 2.5, ease: "none" },
       0
     )
     .fromTo(
       ".career-info-box",
-      { opacity: 0 },
-      { opacity: 1, stagger: 0.1, duration: 0.5 },
-      0
+      { opacity: 0, y: 18 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.22,
+        duration: 0.85,
+        ease: "power2.out",
+      },
+      0.2
     )
     .fromTo(
       ".career-dot",
       { animationIterationCount: "infinite" },
-      {
-        animationIterationCount: "1",
-        delay: 0.3,
-        duration: 0.1,
-      },
-      0
+      { animationIterationCount: "1", duration: 0.15 },
+      2.1
     );
-
-  if (window.innerWidth > 1024) {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: "20%", duration: 0.5, delay: 0.2 },
-      0
-    );
-  } else {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: 0, duration: 0.5, delay: 0.2 },
-      0
-    );
-  }
 }

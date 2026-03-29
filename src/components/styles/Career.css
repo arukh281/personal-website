@@ -261,16 +261,26 @@
   .career-info-in,
   .career-info-box p {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 0;
+    margin-left: 0;
+    padding-inline-start: 36px;
     box-sizing: border-box;
   }
 
   .career-timeline {
-    left: 0%;
+    left: 18px;
+    transform: none;
+  }
+
+  .career-dot {
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 
   .career-container {
-    width: calc(100% - 25px);
+    width: min(100%, calc(var(--cWidth) + 0px));
+    margin-inline: auto;
+    padding-inline: 0;
   }
 }
 
@@ -296,15 +306,19 @@
 
   .career-info-in,
   .career-info-box p {
-    padding-left: 5%;
+    padding-inline-start: 32px;
+  }
+
+  .career-timeline {
+    left: 14px;
   }
 
   .career-section {
     padding-top: 90px;
     margin-top: -70px;
 
-    align-items: start;
-    place-items: inherit;
-    justify-content: left;
+    align-items: center;
+    place-items: center;
+    justify-content: center;
   }
 }
