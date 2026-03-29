@@ -8,7 +8,7 @@
   opacity: 1;
   height: auto;
   margin: auto;
-  margin-bottom: 250px;
+  margin-bottom: 100px;
   padding: 120px 0px;
 }
 
@@ -155,7 +155,7 @@
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 12px 80px;
+  padding: 0 12px 40px;
   position: relative;
   z-index: 3;
 }
@@ -170,7 +170,7 @@
 }
 
 .career-patent-title {
-  margin-top: 36px;
+  margin-top: 22px;
 }
 
 .career-pubs-list {

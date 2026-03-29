@@ -16,8 +16,15 @@ export default function setSplitText() {
   const paras: NodeListOf<ParaElement> = document.querySelectorAll(".para");
   const titles: NodeListOf<ParaElement> = document.querySelectorAll(".title");
 
-  const TriggerStart = window.innerWidth <= 1024 ? "top 60%" : "20% 60%";
-  const ToggleAction = "play pause resume reverse";
+  const narrow = window.innerWidth <= 1024;
+  const TriggerStart = narrow ? "top 72%" : "20% 60%";
+  const toggleActions = narrow
+    ? "play none none none"
+    : "play pause resume reverse";
+  const scrollTriggerBase = {
+    toggleActions,
+    ...(narrow ? { once: true } : {}),
+  };
 
   paras.forEach((para: ParaElement) => {
     para.classList.add("visible");
@@ -33,18 +40,18 @@ export default function setSplitText() {
 
     para.anim = gsap.fromTo(
       para.split.words,
-      { autoAlpha: 0, y: 80 },
+      narrow ? { autoAlpha: 0, y: 28 } : { autoAlpha: 0, y: 80 },
       {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: para.parentElement?.parentElement,
-          toggleActions: ToggleAction,
           start: TriggerStart,
+          ...scrollTriggerBase,
         },
-        duration: 1,
-        ease: "power3.out",
+        duration: narrow ? 1.15 : 1,
+        ease: narrow ? "power2.out" : "power3.out",
         y: 0,
-        stagger: 0.02,
+        stagger: narrow ? 0.035 : 0.02,
       }
     );
   });
@@ -59,19 +66,21 @@ export default function setSplitText() {
     });
     title.anim = gsap.fromTo(
       title.split.chars,
-      { autoAlpha: 0, y: 80, rotate: 10 },
+      narrow
+        ? { autoAlpha: 0, y: 20, rotate: 3 }
+        : { autoAlpha: 0, y: 80, rotate: 10 },
       {
         autoAlpha: 1,
         scrollTrigger: {
           trigger: title.parentElement?.parentElement,
-          toggleActions: ToggleAction,
           start: TriggerStart,
+          ...scrollTriggerBase,
         },
-        duration: 0.8,
-        ease: "power2.inOut",
+        duration: narrow ? 1 : 0.8,
+        ease: "power2.out",
         y: 0,
         rotate: 0,
-        stagger: 0.03,
+        stagger: narrow ? 0.04 : 0.03,
       }
     );
   });
