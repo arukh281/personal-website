@@ -2,7 +2,7 @@
 
 This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP. It includes animated page sections, a character scene, custom cursor interactions, and smooth transitions designed for a modern portfolio experience.
 
-Live site: [personal-website-seven-eta-71.vercel.app](https://personal-website-seven-eta-71.vercel.app/)
+Live site: [aradhya-khandelwal.vercel.app](https://aradhya-khandelwal.vercel.app/)
 
 ## Table of Contents
 

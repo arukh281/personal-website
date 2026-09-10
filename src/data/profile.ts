@@ -13,7 +13,7 @@ export const profile = {
     phoneTel: "tel:+917017341223",
     github: "https://github.com/arukh281",
     linkedin: "https://www.linkedin.com/in/aradhya-khandelwal281/",
-    website: "https://aradhya.dev",
+    website: "https://aradhya-khandelwal.vercel.app",
   },
   about: {
     headline:
