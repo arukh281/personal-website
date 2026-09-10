@@ -31,7 +31,7 @@ export const profile = {
         "Distilling massive qualitative feedback into actionable narrative structures.",
       variant: "light" as const,
       size: "md" as const,
-      link: "https://github.com/arukh281/Major-Project",
+      link: "https://github.com/arukh281/review-insights",
     },
     {
       num: "02",
