@@ -10,9 +10,16 @@ export default function Ideas() {
       </Reveal>
       <div className="ideas-grid">
         {profile.ideas.map((idea, i) => (
-          <Reveal as="article" className="idea-card" key={idea.title} delay={i * 80}>
-            <h3 className="idea-title">{idea.title}</h3>
-            <p className="idea-venue">{idea.venue}</p>
+          <Reveal key={idea.title} delay={i * 80}>
+            <a
+              className="idea-card"
+              href={idea.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="idea-title">{idea.title}</h3>
+              <p className="idea-venue">{idea.venue}</p>
+            </a>
           </Reveal>
         ))}
       </div>

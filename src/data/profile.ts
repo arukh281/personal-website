@@ -31,7 +31,7 @@ export const profile = {
         "Distilling massive qualitative feedback into actionable narrative structures.",
       variant: "light" as const,
       size: "md" as const,
-      link: "https://github.com/arukh281",
+      link: "https://github.com/arukh281/Major-Project",
     },
     {
       num: "02",
@@ -41,7 +41,7 @@ export const profile = {
         "Simulating market dynamics through a zero-risk educational environment.",
       variant: "dark" as const,
       size: "lg" as const,
-      link: "https://github.com/arukh281",
+      link: "https://github.com/arukh281/stock",
     },
     {
       num: "03",
@@ -71,7 +71,7 @@ export const profile = {
         "Answers questions so people spend less time searching and more time doing.",
       variant: "dark" as const,
       size: "md" as const,
-      link: "https://github.com/arukh281",
+      link: "https://github.com/arukh281/sdc-chatbot",
     },
   ],
   experience: [
@@ -79,6 +79,11 @@ export const profile = {
       year: "2026",
       role: "SSS Defence",
       line: "Learning how sound tells us what's in the sky.",
+    },
+    {
+      year: "2026",
+      role: "The Algorithm Lab",
+      line: "Co-founder and CTO, building a startup's tech from scratch.",
     },
     {
       year: "2025",
@@ -91,11 +96,6 @@ export const profile = {
       line: "A summer asking questions about terrain from above.",
     },
     {
-      year: "2025",
-      role: "Halliburton",
-      line: "Building tools that read so people don't have to.",
-    },
-    {
       year: "2024",
       role: "Startup Weekend",
       line: "160 people, 54 hours, one city.",
@@ -104,11 +104,13 @@ export const profile = {
   ideas: [
     {
       title: "On keeping file sharing simple and secure",
-      venue: "ICDSA 2025",
+      venue: "ICDSA 2025 · Springer",
+      link: "https://doi.org/10.1007/978-3-032-15407-1_26",
     },
     {
       title: "Reading signals for surface and ice patterns",
-      venue: "IEEE InGARSS 2025",
+      venue: "IEEE InGARSS 2025 · IEEE Xplore",
+      link: "https://ieeexplore.ieee.org/abstract/document/11583820/",
     },
   ],
   life: [
