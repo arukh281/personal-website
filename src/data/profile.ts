@@ -120,5 +120,5 @@ export const profile = {
     { word: "KITCHEN", line: "Experiment and taste", mark: "spiral" as const },
   ],
   education:
-    "Manipal University Jaipur — B.Tech Computer Science · CGPA 8.03",
+    "Manipal University Jaipur — B.Tech Computer Science · CGPA 8.16",
 } as const;
