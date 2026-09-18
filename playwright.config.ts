@@ -19,6 +19,10 @@ export default defineConfig({
       name: "mobile",
       use: { ...devices["Pixel 5"] },
     },
+    {
+      name: "mobile-375",
+      use: { ...devices["Pixel 5"], viewport: { width: 375, height: 812 } },
+    },
   ],
   webServer: {
     command: "npm run preview -- --host 127.0.0.1 --port 4173",

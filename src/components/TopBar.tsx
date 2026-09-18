@@ -29,9 +29,14 @@ export default function TopBar() {
         <br />
         {profile.locationSub}
       </div>
-      <a href="#top" className="top-bar-mark" aria-label="Back to top">
-        A.K.
-      </a>
+      <div className="top-bar-actions">
+        <a href="#cv" className="top-bar-cv" aria-label="Download CV">
+          <span className="top-bar-cv-long">Download </span>CV
+        </a>
+        <a href="#top" className="top-bar-mark" aria-label="Back to top">
+          A.K.
+        </a>
+      </div>
     </header>
   );
 }

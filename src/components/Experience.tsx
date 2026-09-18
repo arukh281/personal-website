@@ -24,6 +24,16 @@ export default function Experience() {
               <span className="experience-year">{item.year}</span>
               <div>
                 <h3 className="experience-role">{item.role}</h3>
+                {(item.title || item.dates) && (
+                  <p className="experience-meta">
+                    {item.title && (
+                      <span className="experience-position">{item.title}</span>
+                    )}
+                    {item.dates && (
+                      <span className="experience-dates">{item.dates}</span>
+                    )}
+                  </p>
+                )}
                 <p className="experience-line">{item.line}</p>
               </div>
             </Reveal>
